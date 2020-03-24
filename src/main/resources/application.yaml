@@ -1,0 +1,23 @@
+server:
+  port: 8055 #Web应用的服务端口
+
+#以下演示了如何在单个yaml文件定义多个配置环境
+spring:
+  profiles:
+    active: prod #当前激活生产环境配置
+---
+spring:
+  profiles: prod #生产环境
+server:
+  port: 8077
+---
+spring:
+  profiles: test #测试环境
+server:
+  port: 8099
+
+---
+spring:
+  profiles: dev #开发环境
+server:
+  port: 8010
